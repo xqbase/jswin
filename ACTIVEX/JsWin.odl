@@ -1,0 +1,81 @@
+// JsWin.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (JsWin.tlb) that will become a resource in
+// JsWin.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(8F247AFE-EECE-4A13-A14C-07473D7A976B), version(1.0),
+  helpfile("JsWin.hlp"),
+  helpstring("JsWin ActiveX Control module"),
+  control ]
+library JsWinLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CJsWinCtrl
+
+	[ uuid(3C3335F5-6C1C-4E1A-8219-94B713446DB7),
+	  helpstring("Dispatch interface for JsWin Control"), hidden ]
+	dispinterface _DJsWin
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CJsWinCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CJsWinCtrl)
+			[id(1)] void MemCpy(long lpDst, long lpSrc, long dwCount);
+			[id(2)] long StrLen(long lpcstr);
+			[id(3)] long GetMem1(long lpuc);
+			[id(4)] long GetMem2(long lpw);
+			[id(5)] long GetMem4(long lpdw);
+			[id(6)] void PutMem1(long lpuc, long uc);
+			[id(7)] long PutMem2(long lpw, long w);
+			[id(8)] void PutMem4(long lpdw, long dw);
+			[id(9)] long Alloc(long dwSize);
+			[id(10)] void Free(long lp);
+			[id(11)] long LoadLibrary(BSTR szLibFileName);
+			[id(12)] void FreeLibrary(long hMod);
+			[id(13)] long GetProcAddress(long hMod, long szProcName);
+			[id(14)] long CallProc(long lpProc, long lpParams, long nParamNum);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CJsWinCtrl
+
+	[ uuid(7A796794-4FFD-4E79-84A0-AC5BB732746D),
+	  helpstring("Event interface for JsWin Control") ]
+	dispinterface _DJsWinEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CJsWinCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CJsWinCtrl
+
+	[ uuid(560D4DC2-6730-49F8-B47B-5B67C3F1B1A8),
+	  helpstring("JsWin Control"), control ]
+	coclass JsWin
+	{
+		[default] dispinterface _DJsWin;
+		[default, source] dispinterface _DJsWinEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

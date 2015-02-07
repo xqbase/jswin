@@ -1,0 +1,2 @@
+g++ -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/linux" -DNDEBUG -O4 -Wall -shared -o../lib/libcallproc.so -fPIC callproc.cpp
+gcc -DNDEBUG -O4 -Wall -shared -o../lib/libcallwindowproc.so -fPIC callwindowproc.c
