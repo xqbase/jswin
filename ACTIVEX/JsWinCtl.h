@@ -60,7 +60,7 @@ protected:
 	afx_msg long GetMem2(long lpw);
 	afx_msg long GetMem4(long lpdw);
 	afx_msg void PutMem1(long lpuc, long uc);
-	afx_msg long PutMem2(long lpw, long w);
+	afx_msg void PutMem2(long lpw, long w);
 	afx_msg void PutMem4(long lpdw, long dw);
 	afx_msg long Alloc(long dwSize);
 	afx_msg void Free(long lp);

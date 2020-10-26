@@ -36,7 +36,7 @@ BEGIN_DISPATCH_MAP(CJsWinCtrl, COleControl)
 	DISP_FUNCTION(CJsWinCtrl, "GetMem2", GetMem2, VT_I4, VTS_I4)
 	DISP_FUNCTION(CJsWinCtrl, "GetMem4", GetMem4, VT_I4, VTS_I4)
 	DISP_FUNCTION(CJsWinCtrl, "PutMem1", PutMem1, VT_EMPTY, VTS_I4 VTS_I4)
-	DISP_FUNCTION(CJsWinCtrl, "PutMem2", PutMem2, VT_I4, VTS_I4 VTS_I4)
+	DISP_FUNCTION(CJsWinCtrl, "PutMem2", PutMem2, VT_EMPTY, VTS_I4 VTS_I4)
 	DISP_FUNCTION(CJsWinCtrl, "PutMem4", PutMem4, VT_EMPTY, VTS_I4 VTS_I4)
 	DISP_FUNCTION(CJsWinCtrl, "Alloc", Alloc, VT_I4, VTS_I4)
 	DISP_FUNCTION(CJsWinCtrl, "Free", Free, VT_EMPTY, VTS_I4)
@@ -372,7 +372,7 @@ void CJsWinCtrl::PutMem1(long lpuc, long uc)
 	*(char *) lpuc = (char) uc;
 }
 
-long CJsWinCtrl::PutMem2(long lpw, long w) 
+void CJsWinCtrl::PutMem2(long lpw, long w) 
 {
 	*(short *) lpw = (short) w;
 }

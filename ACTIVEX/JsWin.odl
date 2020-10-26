@@ -38,7 +38,7 @@ library JsWinLib
 			[id(4)] long GetMem2(long lpw);
 			[id(5)] long GetMem4(long lpdw);
 			[id(6)] void PutMem1(long lpuc, long uc);
-			[id(7)] long PutMem2(long lpw, long w);
+			[id(7)] void PutMem2(long lpw, long w);
 			[id(8)] void PutMem4(long lpdw, long dw);
 			[id(9)] long Alloc(long dwSize);
 			[id(10)] void Free(long lp);
